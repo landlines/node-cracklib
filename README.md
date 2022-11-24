@@ -34,7 +34,7 @@ The response to either function is a simple dictionary response with a single me
 
 ### Support
 
-Please file bugs, issues, etc. at https://github.com/danielsen/node-cracklib/issues. PRs for bug fixes are welcome.
+Please file bugs, issues, etc. at https://github.com/landlines/node-cracklib/issues. PRs for bug fixes are welcome.
 
 ### Development
 
