@@ -1,0 +1,21 @@
+name: install and test
+on: [push]
+jobs:
+    build:
+        runs-on: debian-latest
+
+        strategy:
+            matrix:
+                node-version: [6.x, 8.x, 10.x, 12.x, 14.x, 15.x, 16.x, 17.x, 18.x, 19.x]
+
+        steps:
+            - name: Install libcrack2
+              run: sudo apt-get install libcrack2 libcrack2-dev
+            - uses: actions/checkout@v2
+            - name: Using nodejs $ {{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: npm install
+            - name: Run unit tests
+              run: npm test

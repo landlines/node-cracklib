@@ -5,7 +5,7 @@
       "sources"       : [ "src/cracklib.cpp" ],
       "include_dirs"  : [ "<!(node -e \"require('nan')\")" ],
       "libraries"     : [ "-lcrack" ],
-      "cflags"        : [ "-Wparentheses" ]
+      "cflags"        : [ "-Wparentheses", "-std=c++17" ]
     }
   ]
 }

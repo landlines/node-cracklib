@@ -1,0 +1,1 @@
+cmd_Release/obj.target/cracklib.node := g++ -o Release/obj.target/cracklib.node -shared -pthread -rdynamic -m64  -Wl,-soname=cracklib.node -Wl,--start-group Release/obj.target/cracklib/src/cracklib.o -Wl,--end-group -lcrack

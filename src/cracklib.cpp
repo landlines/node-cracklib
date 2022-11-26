@@ -1,9 +1,14 @@
-#include <v8.h>
-#include <nan.h>
 #include <node.h>
 #include <crack.h>
 #include <string.h>
 #include <stdlib.h>
+
+#include "macros.h"
+
+DISABLE_WCAST_FUNCTION_TYPE
+#include <v8.h>
+#include <nan.h>
+DISABLE_WCAST_FUNCTION_TYPE_END
 
 using namespace v8;
 using namespace std;
@@ -101,11 +106,13 @@ void InitAll(v8::Local<v8::Object> exports) {
   exports->Set(context,
     Nan::New("fascistCheck").ToLocalChecked(),
     Nan::New<v8::FunctionTemplate>(fascistCheck)
-      ->GetFunction(context).ToLocalChecked());
+      ->GetFunction(context).ToLocalChecked()).Check();
   exports->Set(context,
     Nan::New("fascistCheckUser").ToLocalChecked(),
     Nan::New<v8::FunctionTemplate>(fascistCheckUser)
-      ->GetFunction(context).ToLocalChecked());
+      ->GetFunction(context).ToLocalChecked()).Check();
 }
 
+DISABLE_WCAST_FUNCTION_TYPE
 NODE_MODULE(cracklib, InitAll)
+DISABLE_WCAST_FUNCTION_TYPE_END
