@@ -1,10 +1,19 @@
 node-cracklib - C++ binding to cracklib for checking password strength.
 
+### Node Compatibility
+
+`node-cracklib` is tested with the following versions:
+- 12.x
+- 14.x
+- 15.x
+- 16.x
+- 17.x
+- 18.x
+
 ### Installing 
 
-Note that this package requires that the cracklib development libraries are installed. Installation may vary on your system but, for example on CentOS:
-
-    $ yum install cracklib-devel
+Note that this package requires that the cracklib development libraries are installed. Installation may vary on your system but, for example on Debian:
+    $ apt-get install libcrack2-dev
 
 To install via npm:
     
@@ -46,6 +55,6 @@ If you want to hack on this code you'll need to make sure that the following are
 
 #### Clone and Build
 
-    $ git clone git@github.com:danielsen/node-cracklib.git
+    $ git clone git@github.com:landlines/node-cracklib.git
     $ node-gyp configure -- -DMODULE_NAME=cracklib -DBUILD_TARGET=/path/to/app
     $ node-gyp build
