@@ -1,1 +1,0 @@
-cmd_Release/cracklib.node := ln -f "Release/obj.target/cracklib.node" "Release/cracklib.node" 2>/dev/null || (rm -rf "Release/cracklib.node" && cp -af "Release/obj.target/cracklib.node" "Release/cracklib.node")
