@@ -2,7 +2,7 @@ name: install and test
 on: [push]
 jobs:
     build:
-        runs-on: debian-latest
+        runs-on: ubuntu-latest
 
         strategy:
             matrix:
@@ -13,7 +13,7 @@ jobs:
               run: sudo apt-get install libcrack2 libcrack2-dev
             - uses: actions/checkout@v2
             - name: Using nodejs $ {{ matrix.node-version }}
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3.5.1
               with:
                   node-version: ${{ matrix.node-version }}
             - run: npm install
