@@ -100,17 +100,9 @@ void fascistCheckUser (const Nan::FunctionCallbackInfo<v8::Value>& info) {
   info.GetReturnValue().Set(ret);
 }
     
-void InitAll(v8::Local<v8::Object> exports) {
-  v8::Local<v8::Context> context = exports->CreationContext();
-
-  exports->Set(context,
-    Nan::New("fascistCheck").ToLocalChecked(),
-    Nan::New<v8::FunctionTemplate>(fascistCheck)
-      ->GetFunction(context).ToLocalChecked()).Check();
-  exports->Set(context,
-    Nan::New("fascistCheckUser").ToLocalChecked(),
-    Nan::New<v8::FunctionTemplate>(fascistCheckUser)
-      ->GetFunction(context).ToLocalChecked()).Check();
+void InitAll(v8::Local<v8::Object> exports, v8::Local<v8::Object> module) {
+  Nan::SetMethod(exports, "fascistCheck", fascistCheck);
+  Nan::SetMethod(exports, "fascistCheckUser", fascistCheckUser);
 }
 
 DISABLE_WCAST_FUNCTION_TYPE

@@ -9,6 +9,7 @@ node-cracklib - C++ binding to cracklib for checking password strength.
 - 16.x
 - 17.x
 - 18.x
+- 19.x
 
 ### Installing 
 
