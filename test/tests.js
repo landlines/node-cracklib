@@ -14,14 +14,47 @@ describe('cracklib', function () {
         });
     });
 
+    describe('#fascistCheckAsync()', function () {
+        it(nonMatch, function (done) {
+            cracklib.fascistCheckAsync('Y0urPa55word', function (res) {
+                assert.equal(null, res.message);
+                done();
+            });
+        });
+        it(match, function (done) {
+            cracklib.fascistCheckAsync('Pa55word', function (res) {
+                assert.equal('it is based on a dictionary word', res.message);
+                done();
+            });
+        });
+    });
+
     describe('#fascistCheckUser()', function () {
         it(nonMatch, function () {
             assert.equal(cracklib.fascistCheckUser('Y0urPa55word', 
-                'dan').message, null);
+                'alice', 'alice').message, null);
         });
         it(match, function () {
             assert.equal(cracklib.fascistCheckUser('Pa55word',
-                'dan').message, 'it is based on a dictionary word');
+                'bob', 'bob').message, 'it is based on a dictionary word');
+        });
+    });
+
+    describe('#fascistCheckUserAsync()', function () {
+        it(nonMatch, function (done) {
+            cracklib.fascistCheckUserAsync('Y0urPa55word', 'alice', null, 
+                function (res) {
+                    assert.equal(null, res.message);
+                    done();
+                });
+        });
+        it(match, function (done) {
+            cracklib.fascistCheckUserAsync('Pa55word', 'alice', null,
+                function (res) {
+                    assert.equal('it is based on a dictionary word', 
+                        res.message);
+                    done();
+                });
         });
     });
 });
