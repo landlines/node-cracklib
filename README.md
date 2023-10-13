@@ -19,6 +19,7 @@ It has been tested on
 - 17.x
 - 18.x
 - 19.x
+- 20.x
 
 ### Installing 
 
