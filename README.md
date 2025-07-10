@@ -12,14 +12,18 @@ It has been tested on
 ### Node Compatibility
 
 `node-cracklib` is tested with the following node versions:
-- 12.x
-- 14.x
-- 15.x
 - 16.x
 - 17.x
 - 18.x
 - 19.x
 - 20.x
+- 21.x
+- 22.x
+- 23.x
+- 24.x
+
+Support for voersions 12.x, 13.x, 14,x, and 15.x is still available in version
+2.x of this library.
 
 ### Installing 
 
@@ -34,7 +38,7 @@ To install via npm:
 
 Or clone the repository and build from source:
 
-    $ git clone git@github.com:danielsen/node-cracklib.git
+    $ git clone git@github.com:landlines/node-cracklib.git
     $ node-gyp configure -- -DMODULE_NAME=cracklib -DBUILD_TARGET=/path/to/app
     $ node-gyp build
 
